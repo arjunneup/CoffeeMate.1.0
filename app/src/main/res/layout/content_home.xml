@@ -29,6 +29,7 @@
                 android:layout_width="100dp"
                 android:layout_height="140dp"
                 android:layout_margin="2dp"
+                android:onClick="Add"
                 android:drawableTop="@drawable/ic_add_location"
                 android:text="@string/addACoffeeLbl"
                 android:layout_gravity="center" />

@@ -57,4 +57,8 @@ public class Home extends Base {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void Add(View v){
+        goToActivity(Home.this, Add.class,null);
+    }
 }
