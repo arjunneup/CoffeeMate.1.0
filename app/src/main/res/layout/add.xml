@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/footerLinearLayout"
             android:layout_centerHorizontal="true"
+            android:onClick="onClick"
             android:drawableTop="@drawable/ic_save_todo"
             android:text="@string/saveCoffeeBtn" />
 

@@ -25,6 +25,8 @@ public class Base extends AppCompatActivity {
 		if (bundle != null) newActivity.putExtras(bundle);
 
 		current.startActivity(newActivity);
+
+
 	}
 
 	public void openInfoDialog(Activity current) {
@@ -52,7 +54,11 @@ public class Base extends AppCompatActivity {
 		openInfoDialog(this); }
 	public void menuHelp(MenuItem m) {
 // goToActivity(this, Help.class, null);
-	}
+		goToActivity(this, Help.class, null);
+
+}
 	public void menuHome(MenuItem m) {
-		goToActivity(this, Home.class, null); }
+		goToActivity(this, Home.class, null);
+
+	}
 }

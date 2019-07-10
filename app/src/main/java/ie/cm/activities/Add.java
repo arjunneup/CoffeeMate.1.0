@@ -34,7 +34,7 @@ public class Add extends Base implements
 	}
 
 	public void onClick(View v) {
-		
+
 		coffeeName = name.getText().toString();
 		coffeeShop = shop.getText().toString();
 		try {
@@ -58,4 +58,5 @@ public class Add extends Base implements
 							+ "\'Name\', \'Shop\' and \'Price\'",
 					Toast.LENGTH_SHORT).show();
 	}
+
 }

@@ -8,18 +8,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import ie.cm.R;
 
 public class Home extends Base {
+    TextView recentList; //near the top of the class
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setLogo(R.drawable.ic_launcher1);
+        recentList = findViewById(R.id.recentlyAddedListEmpty);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -37,11 +42,25 @@ public class Home extends Base {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(!coffeeList.isEmpty()) {
+            recentList.setText(coffeeList.toString());
+        } else
+            recentList.setText(getString(R.string.recentlyViewedListEmptyMessage));
+    }
+
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -59,6 +78,7 @@ public class Home extends Base {
     }
 
     public void Add(View v){
-        goToActivity(Home.this, Add.class,null);
+        goToActivity(Home.this, Add.class, null);
     }
+
 }
